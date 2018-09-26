@@ -1,0 +1,24 @@
+<h1>Очень простая форма</h1>
+
+<form [formGroup]="exampleForm">
+  <div formArrayName="testInputArray">
+    <button (click)="addAlias()">+ Add Input</button>
+
+    <div *ngFor="let address of testInputArray.controls; let i=index">
+      <!-- The repeated alias template -->
+      <label>
+        testInput {{i}}:
+        <input type="text" [formControlName]="i">
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!exampleForm.valid">OK</button>
+</form>
+
+<hr>
+
+
+<p>
+  Value: {{ exampleForm.value | json }}
+</p>
