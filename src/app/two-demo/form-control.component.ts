@@ -16,7 +16,7 @@ import { FormGroup } from '@angular/forms';
             <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
         </select>
         </div>
-        <!--<div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>-->
+        <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
   </div>
 
     `

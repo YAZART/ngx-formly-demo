@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { MainComponent } from './views/main.component';
+import { FormlyModule } from '@ngx-formly/core';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MainComponent } from './views/main.component';
     BrowserModule,
     // other imports ...
     ReactiveFormsModule,
+    FormlyModule.forRoot(),
     RouterModule.forRoot(AppRoutes, { useHash: false }),
   ],
   providers: [],

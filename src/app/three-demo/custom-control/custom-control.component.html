@@ -1,0 +1,38 @@
+<!-- <div class="my-custom-control" >
+    <a class="my-custom-control__value"  ></a>
+    
+    <div class="my-custom-control__options-list">
+      <app-my-custom-control-option *ngFor="let item of opts" [key]="item.key" [value]="item.value" (click)="selectOption(item)"></app-my-custom-control-option>
+    </div>
+  </div> -->
+
+  <div class="color-picker" [ngClass]="{'open': open}" >
+    <div class="summary-info" (click)="toggle()">
+      <div class="info">
+        <p class="style">Background</p>
+        <p class="style-value">#FFFFFF</p>
+      </div>
+      <div class="circle" [style.background]="value? value.rgba: '#fff'"></div>
+    </div>
+    <div class="my-custom-control__overlay" (click)="close()"></div>
+    <div class="opened">
+      <div class="colors">
+        <div class="circle" [style.background]="'#ffffff'"></div>
+        <div class="circle" [style.background]="'#000105'"></div>
+        <div class="circle" [style.background]="'#3e6158'"></div>
+        <div class="circle" [style.background]="'#3f7a89'"></div>
+        <div class="circle" [style.background]="'#96c582'"></div>
+        <div class="circle" [style.background]="'#b7d5c4'"></div>
+        <div class="circle" [style.background]="'#bcd6e7'"></div>
+        <div class="circle" [style.background]="'#7c90c1'"></div>
+        <div class="circle" [style.background]="'#9d8594'"></div>
+        <div class="circle" [style.background]="'#dad0d8'"></div>
+      </div>
+      <div class="hex-code">
+        <p>Hex Code</p>
+        <div class="g-input">
+          <input type="text" value="#ffffff"/>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -12,5 +12,9 @@ export const AppRoutes: Routes = [
     },
     {
         path: 'demo-2', loadChildren: './two-demo/two-demo.module#TwoDemoModule'
+    },
+    {
+        path: 'demo-3', loadChildren: './three-demo/three-demo.module#ThreeDemoModule'
     }
+
 ];

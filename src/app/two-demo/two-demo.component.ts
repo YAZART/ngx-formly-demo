@@ -11,7 +11,8 @@ import { FormGroup, FormControl } from '@angular/forms';
             <div *ngFor="let question of questions" class="form-row">
                 <app-form-control [question]="question" [form]="form"></app-form-control>
             </div>
-            {{form | json}}
+            <p>
+            Form Value: {{form.value | json}}
         </form>
     </div>
     `
