@@ -10,28 +10,21 @@
     <div class="summary-info" (click)="toggle()">
       <div class="info">
         <p class="style">Background</p>
-        <p class="style-value">#FFFFFF</p>
+        <p class="style-value">{{value? value.hex: '#ffffff'}}</p>
       </div>
-      <div class="circle" [style.background]="value? value.rgba: '#fff'"></div>
+      <div class="circle" [style.background]="value? value.hex: '#fff'"></div>
     </div>
     <div class="my-custom-control__overlay" (click)="close()"></div>
-    <div class="opened">
+    <div class="color-picker-list" >
       <div class="colors">
-        <div class="circle" [style.background]="'#ffffff'"></div>
-        <div class="circle" [style.background]="'#000105'"></div>
-        <div class="circle" [style.background]="'#3e6158'"></div>
-        <div class="circle" [style.background]="'#3f7a89'"></div>
-        <div class="circle" [style.background]="'#96c582'"></div>
-        <div class="circle" [style.background]="'#b7d5c4'"></div>
-        <div class="circle" [style.background]="'#bcd6e7'"></div>
-        <div class="circle" [style.background]="'#7c90c1'"></div>
-        <div class="circle" [style.background]="'#9d8594'"></div>
-        <div class="circle" [style.background]="'#dad0d8'"></div>
+        <ng-container *ngFor="let item of opts">
+            <div class="circle" [style.background]="item.hex" (click)="selectOption(item)"></div>
+        </ng-container>
       </div>
       <div class="hex-code">
         <p>Hex Code</p>
         <div class="g-input">
-          <input type="text" value="#ffffff"/>
+          <input type="text" [value]="value? value.hex: '#fff'" readonly/>
         </div>
       </div>
     </div>

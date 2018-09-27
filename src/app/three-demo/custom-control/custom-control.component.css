@@ -81,18 +81,26 @@ p.style-value {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
 }
 
-.opened {
+.color-picker-list {
   box-shadow: 0 7px 13px 0 rgba(86, 95, 102, 0.07);
   background: #fff;
   max-width: 270px;
   padding: 15px;
   border-radius: 5px;
-  position: relative;
+  position: absolute;
   box-sizing: border-box;
   margin-top: 15px;
+  transform: scale(0);
+  transition: all 200ms ease-in;
+  transform-origin: top right;
+  z-index: 1;
 }
 
-.opened:after {
+.color-picker.open>.color-picker-list{
+  transform: scale(1);
+}
+
+.color-picker-list:after {
   border: 10px solid transparent;
   border-bottom: 10px solid #fff;
   content: '';
@@ -100,6 +108,8 @@ p.style-value {
   position: absolute;
   top: -20px;
 }
+
+
 
 .colors {
   display: flex;

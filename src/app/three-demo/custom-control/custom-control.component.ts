@@ -6,7 +6,6 @@ import {
   Input,
   Output
 } from '@angular/core';
-import { MyCustomControlOptionComponent } from './my-custom-control-option/my-custom-control-option.component';
 import { IColorValue } from './color-value.model';
 
 @Component({
@@ -25,7 +24,59 @@ export class CustomControlComponent implements ControlValueAccessor {
   // Inputs
 
   @Input()
-  public opts: IColorValue[] = [];
+  public opts: IColorValue[] = [
+    {
+      value: null,
+      hex: '#ffffff',
+      name: 'temp_color_1'
+    },
+    {
+      value: 1,
+      hex: '#000105',
+      name: 'temp_color_2'
+    },
+
+    {
+      value: 2,
+      hex: '#3e6158',
+      name: 'temp_color_3'
+    },
+    {
+      value: 3,
+      hex: '#3f7a89',
+      name: 'temp_color_4'
+    },
+    {
+      value: 4,
+      hex: '#96c582',
+      name: 'temp_color_5'
+    },
+    {
+      value: 5,
+      hex: '#b7d5c4',
+      name: 'temp_color_6'
+    },
+    {
+      value: 6,
+      hex: '#bcd6e7',
+      name: 'temp_color_7'
+    },
+    {
+      value: 7,
+      hex: '#7c90c1',
+      name: 'temp_color_8'
+    },
+    {
+      value: 8,
+      hex: '#9d8594',
+      name: 'temp_color_9'
+    },
+    {
+      value: 9,
+      hex: '#dad0d8',
+      name: 'temp_color_10'
+    }
+  ];
 
   @Input()
   public get value(): IColorValue {
@@ -50,8 +101,9 @@ export class CustomControlComponent implements ControlValueAccessor {
   private _onTouched: () => void = () => {};
 
   public selectOption(item) {
-    this.value = item.value;
+    this.value = item;
     this.open = false;
+    console.log(item);
   }
 
   public writeValue(value: IColorValue): void {

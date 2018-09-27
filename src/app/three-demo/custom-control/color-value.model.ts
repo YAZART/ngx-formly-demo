@@ -1,5 +1,5 @@
 export interface IColorValue {
-  rgba: string;
+  value: number;
   hex: string;
   name: string;
 }

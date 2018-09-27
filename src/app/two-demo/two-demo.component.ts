@@ -5,7 +5,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-two-demo',
   template: `
-    <div>
+    <div class="container">
+        <h1>Конфигурируемая форма</h1>
         <button (click)="addDropdown()">+ Add Dropdown</button> <button (click)="addInput()">+ Add Input</button>
         <form [formGroup]="form">
             <div *ngFor="let question of questions" class="form-row">

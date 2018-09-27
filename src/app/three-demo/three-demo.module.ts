@@ -10,6 +10,9 @@ import { CustomFormlyRadioComponent } from './custom-formly/types/radio.type';
 import { CustomFormlySelectComponent } from './custom-formly/types/select.type';
 import { CustomControlModule } from './custom-control/custom-control.module';
 import { RouterModule } from '@angular/router';
+import { FormlyWrapperDescriptionComponent } from './custom-formly/wrappers/formly-description.wrapper';
+import { FormlyWrapperValidationMessagesComponent } from './custom-formly/wrappers/validation-message.wrapper';
+import { CustomFormlyColorComponent } from './custom-formly/types/color.type';
 
 @NgModule({
   imports: [
@@ -22,12 +25,16 @@ import { RouterModule } from '@angular/router';
     FormlyModule.forRoot(CustomFormlyConfig),
 
   ],
-  exports: [],
+  exports: [
+],
   declarations: [
     ThreeDemoComponent,
     CustomFormlyInputComponent,
     CustomFormlyRadioComponent,
-    CustomFormlySelectComponent
+    CustomFormlySelectComponent,
+    FormlyWrapperDescriptionComponent,
+    FormlyWrapperValidationMessagesComponent,
+    CustomFormlyColorComponent
   ],
   providers: []
 })

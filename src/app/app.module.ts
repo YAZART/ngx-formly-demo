@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { MainComponent } from './views/main.component';
+import { CommonModule } from '@angular/common';
 import { FormlyModule } from '@ngx-formly/core';
 
 @NgModule({
@@ -15,10 +16,11 @@ import { FormlyModule } from '@ngx-formly/core';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     // other imports ...
+    FormsModule,
     ReactiveFormsModule,
-    FormlyModule.forRoot(),
-    RouterModule.forRoot(AppRoutes, { useHash: false }),
+    RouterModule.forRoot(AppRoutes, { useHash: false })
   ],
   providers: [],
   bootstrap: [AppComponent]
